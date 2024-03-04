@@ -13,6 +13,22 @@ name = "zero2prod"
 [dependencies]
 actix-web = "4.5.1"
 tokio = { version = "1.36.0", features = ["macros", "rt-multi-thread"] }
+serde = { version = "1.0.197", features = ["derive"] }
+config = "0.14"
+chrono = { version = "0.4.34", default-features = false, features = ["clock"] }
+uuid = { version = "1.7.0", features = ["v4"] }
+
+[dependencies.sqlx]
+version = "0.7"
+default-features = false
+features = [
+    "runtime-tokio-rustls",
+    "macros",
+    "postgres",
+    "uuid",
+    "chrono",
+    "migrate"
+]
 
 [dev-dependencies]
 reqwest = "0.11.24"
